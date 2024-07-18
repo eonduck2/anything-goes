@@ -11,3 +11,4 @@
 - Vanilla Extract
 - Firebase
 - Jest
+- Google Analytics
