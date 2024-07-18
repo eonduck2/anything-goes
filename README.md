@@ -10,3 +10,4 @@
 - Tailwind CSS
 - Vanilla Extract
 - Firebase
+- Jest
