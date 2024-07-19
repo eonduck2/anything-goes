@@ -17,9 +17,9 @@
     "outDir": "tmp",
     "noEmit": true,
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     }
   },
-  "files": [".eslintrc.cjs"],
-  "include": ["src", "*.d.ts", "*.config.ts"]
+  "files": ["./.eslintrc.cjs"],
+  "include": ["src", "./*.d.ts", "./*.config.ts"]
 }
