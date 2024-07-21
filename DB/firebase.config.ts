@@ -1,6 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { connectDatabaseEmulator } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -10,7 +13,9 @@ const firebaseConfig = {
   apiKey: "AIzaSyCJNGbkGGKxOzAjobjN77kDRJGL-ZyWd74",
   authDomain: "anything-goes-d5a37.firebaseapp.com",
   databaseURL:
-    "https://anything-goes-d5a37-default-rtdb.asia-southeast1.firebasedatabase.app",
+    process.env.NODE_ENV === "development"
+      ? "http://127.0.0.1:8888/?ns=anything-goes-d5a37"
+      : "https://anything-goes-d5a37-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "anything-goes-d5a37",
   storageBucket: "anything-goes-d5a37.appspot.com",
   messagingSenderId: "56698650903",
@@ -20,6 +25,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const database = getDatabase(app);
 
-export { app, analytics };
+// const analytics = getAnalytics(app);
+
+// export { app, analytics };
+export { app, auth, database };
