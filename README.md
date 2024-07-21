@@ -8,7 +8,7 @@
 - Node.js
 - Nest.js
 - Tailwind CSS
-- Styled-Components & Vanilla Extract (qwik integration)
+- Styled Vanilla Extract
 - Firebase
 - Jest
 - Google Analytics
