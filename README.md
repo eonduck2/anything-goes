@@ -2,14 +2,14 @@
 - Node.js
 - Typescript
 - Qwik
+- Tailwind CSS
+- Styled Vanilla Extract
 - Vite
 - ESlint
 - Prettier
 - Babel.js
 - Express.js
 - Nest.js
-- Tailwind CSS
-- Styled Vanilla Extract
 - Firebase
 - Jest
 - Google Analytics
