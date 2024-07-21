@@ -1,4 +1,5 @@
 # Stacks
+- Node.js
 - Typescript
 - Qwik
 - Vite
@@ -6,7 +7,6 @@
 - Prettier
 - Babel.js
 - Express.js
-- Node.js
 - Nest.js
 - Tailwind CSS
 - Styled Vanilla Extract
