@@ -4,6 +4,7 @@
 - Vite
 - ESlint
 - Prettier
+- Babel.js
 - Express.js
 - Node.js
 - Nest.js
