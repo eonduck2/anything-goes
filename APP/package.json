@@ -29,7 +29,6 @@
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@babel/preset-env": "^7.24.8",
-    "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@builder.io/qwik": "^1.7.1",
     "@builder.io/qwik-city": "^1.7.1",
