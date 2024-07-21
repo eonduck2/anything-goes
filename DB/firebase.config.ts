@@ -1,11 +1,10 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 import * as dotenv from "dotenv";
-// 환경 변수 로드
+
 dotenv.config({ path: "../.env" });
 
 const firebaseConfig = {
@@ -22,7 +21,6 @@ const firebaseConfig = {
   measurementId: process.env.MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
