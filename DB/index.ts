@@ -8,13 +8,10 @@ const password = "!1dlwhdtn";
 
 const saveData = async () => {
   try {
-    // 사용자 로그인
     await signInWithEmailAndPassword(auth, email, password);
 
-    // 로그인 완료 후 인증 상태 확인
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        // 인증된 경우 데이터 저장
         try {
           const dbRef = ref(database, "randomData");
           await set(dbRef, {
