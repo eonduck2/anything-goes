@@ -3,24 +3,23 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { connectDatabaseEmulator } from "firebase/database";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import * as dotenv from "dotenv";
+// 환경 변수 로드
+dotenv.config({ path: "../.env" });
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCJNGbkGGKxOzAjobjN77kDRJGL-ZyWd74",
-  authDomain: "anything-goes-d5a37.firebaseapp.com",
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
   databaseURL:
-    process.env.NODE_ENV === "development"
-      ? "http://127.0.0.1:8888/?ns=anything-goes-d5a37"
-      : "https://anything-goes-d5a37-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "anything-goes-d5a37",
-  storageBucket: "anything-goes-d5a37.appspot.com",
-  messagingSenderId: "56698650903",
-  appId: "1:56698650903:web:62d4e008cc4cff50f1b752",
-  measurementId: "G-ZL1RR5168T",
+    process.env.DATABASE_TYPE === "development"
+      ? process.env.__EMULATOR
+      : process.env.__FIREBASE,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
 };
 
 // Initialize Firebase
