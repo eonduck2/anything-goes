@@ -1,7 +1,10 @@
 import express, { Request, Response } from "express";
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: "../.env" });
 
 const app = express();
-const port = 5000;
+const port = process.env.DB_SERVER_PORT;
 
 app.use(express.json());
 

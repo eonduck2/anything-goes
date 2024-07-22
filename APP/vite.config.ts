@@ -9,6 +9,10 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import pkg from "./package.json";
 import babel from "@rollup/plugin-babel";
 import { vanillaExtractPlugin } from "styled-vanilla-extract/vite";
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: "../.env" });
+
 type PkgDep = Record<string, string>;
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
   dependencies: PkgDep;
@@ -29,10 +33,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
       babel({
         babelHelpers: "bundled",
         exclude: "node_modules/**",
-        presets: [
-          "@babel/preset-env",
-          "@babel/preset-typescript",
-        ],
+        presets: ["@babel/preset-env", "@babel/preset-typescript"],
       }),
       vanillaExtractPlugin(),
     ],
@@ -59,7 +60,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     //       }
     //     : undefined,
     server: {
-      port: 3000,
+      port: Number(process.env.CLIENT_SERVER_PORT),
       headers: {
         // Don't cache the server response in dev mode
         "Cache-Control": "public, max-age=0",
